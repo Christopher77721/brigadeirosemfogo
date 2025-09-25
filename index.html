@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Brigadeiro Sem Fogo - E-book Exclusivo</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: #fff8f0;
+      color: #333;
+    }
+    header {
+      text-align: center;
+      padding: 3rem 1rem;
+      background: linear-gradient(135deg, #ff9a9e, #fecfef);
+    }
+    header h1 {
+      font-size: 2.5rem;
+      font-weight: 800;
+      margin-bottom: 1rem;
+      color: #3a1c0a;
+    }
+    header p {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+    }
+    .btn {
+      background: #ff5a5f;
+      color: white;
+      padding: 1rem 2rem;
+      border-radius: 50px;
+      font-size: 1.1rem;
+      text-decoration: none;
+      font-weight: 600;
+      transition: 0.3s;
+      cursor: pointer;
+      display: inline-block;
+    }
+    .btn:hover {
+      background: #e0484d;
+    }
+    section {
+      padding: 3rem 1rem;
+      max-width: 1000px;
+      margin: auto;
+    }
+    .benefits {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+    .benefit {
+      background: white;
+      border-radius: 12px;
+      padding: 1.5rem;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+    /* 🔥 Imagens padronizadas, arredondadas e com borda */
+    .benefit img {
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 3px solid #ff9a9e;
+      margin-bottom: 1rem;
+    }
+    .price-box {
+      text-align: center;
+      background: white;
+      border-radius: 16px;
+      padding: 2rem;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+      margin: 3rem auto;
+      max-width: 600px;
+    }
+    .price-box h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+    .price {
+      font-size: 2.5rem;
+      color: #e0484d;
+      font-weight: 800;
+      margin: 1rem 0;
+    }
+    .pulse {
+      animation: pulse 1.5s infinite;
+    }
+    @keyframes pulse {
+      0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(255,90,95,0.6); }
+      70% { transform: scale(1.05); box-shadow: 0 0 0 15px rgba(255,90,95,0); }
+      100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(255,90,95,0); }
+    }
+    .faq {
+      margin-top: 3rem;
+    }
+    .faq h3 {
+      font-size: 1.3rem;
+      margin: 1rem 0 0.5rem;
+    }
+    .reviews {
+      margin-top: 3rem;
+    }
+    .review {
+      background: white;
+      border-radius: 12px;
+      padding: 1.5rem;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      margin-bottom: 1.5rem;
+    }
+    .stars {
+      color: #f5a623;
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+    }
+    .review strong {
+      display: block;
+      margin-top: 0.5rem;
+      font-size: 0.9rem;
+      color: #555;
+    }
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      background: #3a1c0a;
+      color: white;
+      margin-top: 3rem;
+    }
+    @keyframes highlight {
+      0% { box-shadow: 0 0 0px rgba(255,90,95,0); }
+      50% { box-shadow: 0 0 25px rgba(255,90,95,0.9); }
+      100% { box-shadow: 0 0 0px rgba(255,90,95,0); }
+    }
+    .highlight {
+      animation: highlight 1.2s ease-in-out;
+    }
+    /* Contador */
+    .countdown {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #e0484d;
+      margin: 1rem 0;
+    }
+    /* Barra fixa */
+    .sticky-bar {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background: #3a1c0a;
+      color: #fff;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.8rem 1rem;
+      box-shadow: 0 -4px 15px rgba(0,0,0,0.2);
+      z-index: 9999;
+      transform: translateY(100%);
+      transition: transform 0.4s ease-in-out;
+    }
+    .sticky-bar.show {
+      transform: translateY(0);
+    }
+    .sticky-bar span {
+      font-size: 0.95rem;
+      font-weight: 500;
+    }
+    .sticky-bar .small-btn {
+      padding: 0.6rem 1.2rem;
+      border-radius: 40px;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+
+  <header data-aos="fade-down">
+    <h1>🍫 Descubra o Segredo do <br> Brigadeiro Sem Fogo!</h1>
+    <p>Aprenda a preparar brigadeiros deliciosos sem precisar usar o fogão. Receita prática, rápida e irresistível!</p>
+    <a href="#oferta" class="btn scroll-btn">Quero Meu E-book Agora!</a>
+  </header>
+
+  <section data-aos="fade-up">
+    <h2>O que você vai encontrar no E-book?</h2>
+    <div class="benefits">
+      <div class="benefit" data-aos="zoom-in">
+        <img src="https://images.unsplash.com/photo-1600891964094-b7d3b1c4a7f2" alt="Brigadeiro">
+        <h3>Receita Exclusiva</h3>
+        <p>O passo a passo para preparar brigadeiro sem fogo de forma simples e prática.</p>
+      </div>
+      <div class="benefit" data-aos="zoom-in" data-aos-delay="200">
+        <img src="https://images.unsplash.com/photo-1590080875724-c3d2f91eac5b" alt="Tempo">
+        <h3>Economia de Tempo</h3>
+        <p>Receita pronta em poucos minutos, ideal para matar aquela vontade de doce.</p>
+      </div>
+      <div class="benefit" data-aos="zoom-in" data-aos-delay="400">
+        <img src="https://images.unsplash.com/photo-1551218808-94e220e084d2" alt="Preço baixo">
+        <h3>Acessível para Todos</h3>
+        <p>Por apenas <strong>R$19,90</strong> você tem acesso ao guia completo.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="oferta" class="price-box" data-aos="flip-up">
+    <h2>🎁 Oferta Exclusiva</h2>
+    <p>Garanta agora o seu e-book "Brigadeiro Sem Fogo" por apenas:</p>
+    <div class="price">R$19,90</div>
+
+    <!-- Contador regressivo -->
+    <p><strong>⏳ Atenção: essa oferta especial expira em:</strong></p>
+    <div id="countdown" class="countdown">00:30:00</div>
+
+    <a href="https://seulinkdecompra.com" class="btn pulse buy-btn">Quero Garantir Agora</a>
+    <p><small>Compra 100% segura | Entrega imediata por e-mail</small></p>
+  </section>
+
+  <section class="reviews" data-aos="fade-right">
+    <h2>O que nossos leitores dizem 🍫</h2>
+    <div class="review" data-aos="fade-up">
+      <div class="stars">⭐⭐⭐⭐⭐</div>
+      <p>“Receita incrível! Fiz em 10 minutos e ficou maravilhoso. Meu filho adorou!”</p>
+      <strong>- Juliana S.</strong>
+    </div>
+    <div class="review" data-aos="fade-up" data-aos-delay="200">
+      <div class="stars">⭐⭐⭐⭐⭐</div>
+      <p>“Nunca imaginei fazer brigadeiro sem fogão. Prático demais e delicioso.”</p>
+      <strong>- Marcos A.</strong>
+    </div>
+    <div class="review" data-aos="fade-up" data-aos-delay="400">
+      <div class="stars">⭐⭐⭐⭐⭐</div>
+      <p>“Vale cada centavo, já fiz 3 vezes e todo mundo pede a receita.”</p>
+      <strong>- Fernanda L.</strong>
+    </div>
+  </section>
+
+  <section class="faq" data-aos="fade-left">
+    <h2>Perguntas Frequentes</h2>
+    <h3>Como recebo o e-book?</h3>
+    <p>Após a compra, você recebe imediatamente no seu e-mail.</p>
+    <h3>Preciso ter experiência na cozinha?</h3>
+    <p>Não! A receita é simples e qualquer pessoa pode fazer.</p>
+    <h3>É realmente sem fogo?</h3>
+    <p>Sim, todo o preparo é feito sem precisar usar o fogão.</p>
+  </section>
+
+  <footer>
+    <p>© 2025 Brigadeiro Sem Fogo - Todos os direitos reservados.</p>
+  </footer>
+
+  <!-- Barra fixa -->
+  <div class="sticky-bar" id="stickyBar">
+    <span>📖 E-book Brigadeiro Sem Fogo - Apenas R$19,90</span>
+    <a href="https://seulinkdecompra.com" class="btn small-btn sticky-buy">Quero Agora!</a>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({ duration: 1000, once: true });
+
+    // Scroll suave no botão do header
+    document.querySelectorAll('.scroll-btn').forEach(btn => {
+      btn.addEventListener('click', function(e) {
+        e.preventDefault();
+        document.querySelector('#oferta').scrollIntoView({ behavior: 'smooth' });
+      });
+    });
+
+    // Efeito highlight no botão da oferta
+    document.querySelector('.buy-btn').addEventListener('click', function(e) {
+      e.preventDefault();
+      const oferta = document.querySelector('#oferta');
+      oferta.classList.add('highlight');
+      setTimeout(() => {
+        window.location.href = this.getAttribute('href');
+      }, 1200);
+    });
+
+    // Sticky bar aparece após 50% da página
+    const stickyBar = document.getElementById('stickyBar');
+    window.addEventListener('scroll', () => {
+      const scrollTop = window.scrollY;
+      const docHeight = document.body.scrollHeight - window.innerHeight;
+      if (scrollTop > docHeight / 2) {
+        stickyBar.classList.add('show');
+      } else {
+        stickyBar.classList.remove('show');
+      }
+    });
+
+    // Clique na sticky bar (efeito + redirecionamento)
+    document.querySelector('.sticky-buy').addEventListener('click', function(e) {
+      e.preventDefault();
+      const oferta = document.querySelector('#oferta');
+      oferta.scrollIntoView({ behavior: 'smooth' });
+      oferta.classList.add('highlight');
+      setTimeout(() => {
+        window.location.href = this.getAttribute('href');
+      }, 1200);
+    });
+
+    // Contador regressivo (30 minutos)
+    function startCountdown(duration, display) {
+      let timer = duration, hours, minutes, seconds;
+      setInterval(() => {
+        hours = parseInt(timer / 3600, 10);
+        minutes = parseInt((timer % 3600) / 60, 10);
+        seconds = parseInt(timer % 60, 10);
+
+        hours = hours < 10 ? "0" + hours : hours;
+        minutes = minutes < 10 ? "0" + minutes : minutes;
+        seconds = seconds < 10 ? "0" + seconds : seconds;
+
+        display.textContent = hours + ":" + minutes + ":" + seconds;
+
+        if (--timer < 0) {
+          display.textContent = "⚠️ Oferta Encerrada!";
+        }
+      }, 1000);
+    }
+
+    window.onload = function () {
+      const thirtyMinutes = 60 * 30; // 30 minutos
+      const display = document.querySelector('#countdown');
+      startCountdown(thirtyMinutes, display);
+    };
+  </script>
+</body>
+</html>
